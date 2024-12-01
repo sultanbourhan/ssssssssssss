@@ -21,6 +21,7 @@
   --da-color : #d9e5ff ;
   --li-color : #fff ;
   --sec-color:#fafbff;
+  --placeholder-color: hsl(0deg 0% 71.8%);
 
 
   /*========== Font and typography ==========*/
@@ -53,7 +54,7 @@
   --da-color : hsl(228, 24%, 16%);
   --li-color : #121b4d ;
   --sec-color:hsl(228, 24%, 16%);
-
+  --placeholder-color: hsl(220, 1%, 47%);
 }
 
 
@@ -88,7 +89,7 @@ body{
 
 .coolinput .input::placeholder{
   font-size: 17px;
-  color: var(--text-color);
+  color: var(--placeholder-color);
 }
 
 
