@@ -33,9 +33,10 @@ export default function Companys() {
   const Navigate = useNavigate();
 
   useEffect( () =>  {
+    window.scrollTo(0, 0);
     setLoading(true)
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company?keyword=${search}${Country !== "" ? `&Country=${Country}`: ""}${id_C !== "" ? `&categoreys=${id_C}`: "" }&limit=${limit}`
+      `https://b2you.net/api/v2/company?keyword=${search}${Country !== "" ? `&Country=${Country}`: ""}${id_C !== "" ? `&categoreys=${id_C}`: "" }&limit=${limit}`
     )
       .then((res) => {
         setCompany(res.data.data);
@@ -44,6 +45,9 @@ export default function Companys() {
         if(limit > res.data.pagination.Allcompany ){
           setnone_All("none")
         }
+
+
+
   
         setLoading(false);
 
@@ -63,7 +67,7 @@ export default function Companys() {
   useEffect(() => {
     
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_Categorey`
+      `https://b2you.net/api/v2/company/get_Categorey`
     )
       .then((res) => {
         setcategory(res.data.data);
@@ -125,7 +129,7 @@ export default function Companys() {
               <option value={""} >جميع الفئات</option>
               {category
                 ? category.map((cat) => {
-                    return <option key={cat._id} value={cat._id}>{cat.name}</option>;
+                    return <option selected={id_C === cat._id} key={cat._id} value={cat._id}>{cat.name}</option>;
                   })
                 : null}
             </select>
@@ -166,10 +170,10 @@ export default function Companys() {
             company.map((comp) => {
               // حماية ضد القيم الفارغة أو غير الصحيحة
               const logoImage = comp.logoImage
-                ? `http://${comp.logoImage}`
+                ? `https://${comp.logoImage}`
                 : img_hero1; // صورة افتراضية إذا كانت الصورة فارغة
               const companyImage = comp.companyImage
-                ? `http://${comp.companyImage}`
+                ? `https://${comp.companyImage}`
                 : img_hero1; // صورة افتراضية للشركة
               const categoryName = comp.categorey
                 ? comp.categorey.name

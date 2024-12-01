@@ -97,7 +97,7 @@
     padding-right: 10px;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
+    align-items: end;
   }
 
   .Footer div:nth-child(1) {

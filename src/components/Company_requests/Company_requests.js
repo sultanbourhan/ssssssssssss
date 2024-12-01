@@ -37,7 +37,7 @@ export default function Company_requests() {
   const [cookies] = useCookies(["token"]);
 
   useEffect(() => {
-    Axios.get(`http://${process.env.REACT_APP_BASE_URL}/api/v2/user`, {
+    Axios.get(`https://b2you.net/api/v2/user`, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -54,7 +54,7 @@ export default function Company_requests() {
 
   useEffect(() => {
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_Categorey`
+      `https://b2you.net/api/v2/company/get_Categorey`
     )
       .then((res) => {
         setCategorey(res.data.data);
@@ -149,7 +149,7 @@ export default function Company_requests() {
     }
 
     Axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/create_Company_requests`,
+      `https://b2you.net/api/v2/company/create_Company_requests`,
       formData,
       {
         headers: {

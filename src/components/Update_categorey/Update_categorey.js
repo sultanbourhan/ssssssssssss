@@ -25,7 +25,7 @@ export default function Update_category() {
   const inputFileRef = useRef(null);
 
   useEffect(() => {
-    Axios.get(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_Categorey_id/${id}`, {
+    Axios.get(`https://b2you.net/api/v2/company/get_Categorey_id/${id}`, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -57,7 +57,7 @@ export default function Update_category() {
         description,
       };
   
-      Axios.put(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/update_Categorey/${id}`, jsonData, {
+      Axios.put(`https://b2you.net/api/v2/company/update_Categorey/${id}`, jsonData, {
         headers: {
           Authorization: `Bearer ${cookies.token}`,
           'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ export default function Update_category() {
         console.log(key, value);
       }
   
-      Axios.put(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/update_Categorey/${id}`, formData, {
+      Axios.put(`https://b2you.net/api/v2/company/update_Categorey/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${cookies.token}`,
         },
@@ -135,7 +135,7 @@ export default function Update_category() {
 
   return (
     <div className='Update_category'>
-      <h2>Update Category</h2>
+      <h2>تعديل الفئة</h2>
       <p>{api_err}</p>
 
       <form onSubmit={handleSubmit} encType="multipart/form-data">
@@ -169,7 +169,7 @@ export default function Update_category() {
             <div className="img_upd_1">
               <p>{categoryImage_err}</p>
               <label htmlFor="categoryImage" className="text">صورة الفئة:</label>
-              {categoryImagePreview && <img src={`http://${categoryImagePreview}`} alt="Category" />}
+              {categoryImagePreview && <img src={`https://${categoryImagePreview}`} alt="Category" />}
               <div
                 className='img_upd'
                 onClick={() => inputFileRef.current.click()}

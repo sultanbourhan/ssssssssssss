@@ -463,3 +463,11 @@ img.back1 {
     padding: 0.5rem 0;
   }
 }
+
+
+
+.signin .input-field span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

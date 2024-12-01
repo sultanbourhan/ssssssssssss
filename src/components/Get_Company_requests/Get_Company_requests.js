@@ -21,7 +21,7 @@ export default function Get_Company_requests() {
   console.log(process.env.REACT_APP_BASE_URL);
 
   useEffect(() => {
-    Axios.get(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_Company_requests`, {
+    Axios.get(`https://b2you.net/api/v2/company/get_Company_requests`, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -37,7 +37,7 @@ export default function Get_Company_requests() {
 
   const delete_company = () => {
     setloading(true)
-    Axios.delete(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/delete_Company_requests_admin/${id_company}`, {
+    Axios.delete(`https://b2you.net/api/v2/company/delete_Company_requests_admin/${id_company}`, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -66,7 +66,7 @@ export default function Get_Company_requests() {
   const accept = (id)=>{
     setloading(true)
     // serTest(true)
-    Axios.post(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/Accept_Company_requests_admin/${id}`, {} ,{
+    Axios.post(`https://b2you.net/api/v2/company/Accept_Company_requests_admin/${id}`, {} ,{
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -103,15 +103,15 @@ export default function Get_Company_requests() {
       {company.length > 0? company.map((com) => (
         <div className='Get_company_cart' key={com._id}>
           <div className='user_company'>
-          <img src={com.user.profilImage ? `http://${com.user.profilImage}` : user_img} />
+          <img src={com.user.profilImage ? `https://${com.user.profilImage}` : user_img} />
             <span>
               <p>{com.user?.name || 'Unknown'}</p>
               <p>{com.user?.email || 'Unknown'}</p>
             </span>
           </div>
           <div className='img_company'>
-            <img src={`http://${com.logoImage || ''}`} alt="Company Logo"/>
-            <img src={`http://${com.companyImage || ''}`} alt="Company"/>
+            <img src={`https://${com.logoImage || ''}`} alt="Company Logo"/>
+            <img src={`https://${com.companyImage || ''}`} alt="Company"/>
           </div>
           <div className='text_company'>
             <h2>{com.name || 'Unnamed Company'}</h2>

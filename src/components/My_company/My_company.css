@@ -130,6 +130,7 @@ overflow-y: scroll;
   background-color: var(--sec-color);
   color: var(--text-color);
   text-align: end;
+  width: 100%;
 }
 .dec_com .dec:nth-child(2) .create_comment input:focus{
   outline: none;
@@ -262,8 +263,3 @@ overflow-y: scroll;
   }
 }
 
-@media (max-width: 991px){
-  .dec_com .dec:nth-child(2) .create_comment input{
-    padding: 5px 15px 5px 10px;
-  }
-}

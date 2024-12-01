@@ -22,7 +22,7 @@ export default function Forgot_passord() {
     const Navigate = useNavigate()
 
     const code = ()=>{
-        Axios.post(`http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/forgotpassord` , {email})
+        Axios.post(`https://b2you.net/api/v2/auth/forgotpassord` , {email})
       .then(res => {
         console.log(res.data.data);
         setemailerr("")

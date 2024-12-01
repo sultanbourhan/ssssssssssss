@@ -64,7 +64,7 @@ export default function Create_Categorey() {
     }
 
     // إرسال البيانات إلى الـ API
-    Axios.post(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/create_Categorey`, formData, {
+    Axios.post(`https://b2you.net/api/v2/company/create_Categorey`, formData, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },

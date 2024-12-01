@@ -38,9 +38,7 @@ export default function Get_company() {
 
   useEffect(() => {
     Axios.get(
-      `http://${
-        process.env.REACT_APP_BASE_URL
-      }/api/v2/company?keyword=${search}${
+      `https://b2you.net/api/v2/company?keyword=${search}${
         Country !== "" ? `&Country=${Country}` : ""
       }${categoryfl !== "" ? `&categoreys=${categoryfl}` : ""}&limit=${limit}`
     )
@@ -62,7 +60,7 @@ export default function Get_company() {
   const delete_company = () => {
     setloading(true);
     Axios.delete(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/delete_company_id/${id_company}`,
+      `https://b2you.net/api/v2/company/delete_company_id/${id_company}`,
       {
         headers: {
           Authorization: `Bearer ${cookies.token}`,
@@ -94,7 +92,7 @@ export default function Get_company() {
 
   useEffect(() => {
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_Categorey`
+      `https://b2you.net/api/v2/company/get_Categorey`
     )
       .then((res) => {
         setcategory(res.data.data);
@@ -228,7 +226,7 @@ export default function Get_company() {
             <img
               src={
                 com.user && com.user.profilImage
-                  ? `http://${com.user.profilImage}`
+                  ? `https://${com.user.profilImage}`
                   : user_img
               }
             />
@@ -238,8 +236,8 @@ export default function Get_company() {
             </span>
           </div>
           <div className="img_company" onClick={() => Navigate(`/company_id/${com._id}`)}>
-            <img src={`http://${com.logoImage || ""}`} alt="Company Logo" />
-            <img src={`http://${com.companyImage || ""}`} alt="Company" />
+            <img src={`https://${com.logoImage || ""}`} alt="Company Logo" />
+            <img src={`https://${com.companyImage || ""}`} alt="Company" />
           </div>
           <div className="text_company">
             <h2>{com.name || "Unnamed Company"}</h2>
@@ -269,16 +267,6 @@ export default function Get_company() {
             </p>
             <StarRating rating={com.ratingsAverage || 0} />
           </div>
-          <div className="icon_company">
-            <FontAwesomeIcon
-              onClick={() => Navigate(`/admin/update_company/${com._id}`)}
-              icon={faPenToSquare}
-            />
-            <FontAwesomeIcon
-              onClick={() => open_delete(com._id)}
-              icon={faTrashCan}
-            />
-          </div>
           <div className="type">
             <p>نوع الاشتراك : {com.subscription.type}</p>
             <p>
@@ -289,6 +277,16 @@ export default function Get_company() {
               تاريخ الانت :{" "}
               {format(new Date(com.subscription.endDate), "dd/MM/yyyy")}
             </p>
+          </div>
+          <div className="icon_company">
+            <FontAwesomeIcon
+              onClick={() => Navigate(`/admin/update_company/${com._id}`)}
+              icon={faPenToSquare}
+            />
+            <FontAwesomeIcon
+              onClick={() => open_delete(com._id)}
+              icon={faTrashCan}
+            />
           </div>
         </div>
       ))}

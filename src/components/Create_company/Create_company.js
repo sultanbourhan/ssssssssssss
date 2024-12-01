@@ -36,7 +36,7 @@ export default function Create_company() {
   const [cookies] = useCookies(["token"]);
 
   useEffect(() => {
-    Axios.get(`http://${process.env.REACT_APP_BASE_URL}/api/v2/user`, {
+    Axios.get(`https://b2you.net/api/v2/user`, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -53,7 +53,7 @@ export default function Create_company() {
 
   useEffect(() => {
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_Categorey`
+      `https://b2you.net/api/v2/company/get_Categorey`
     )
       .then((res) => {
         setCategorey(res.data.data);
@@ -148,7 +148,7 @@ export default function Create_company() {
     }
 
     Axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company`,
+      `https://b2you.net/api/v2/company`,
       formData,
       {
         headers: {

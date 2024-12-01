@@ -61,7 +61,7 @@ export default function Admin() {
     
   useEffect(() => {
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/get_date_my`,
+      `https://b2you.net/api/v2/auth/get_date_my`,
       {
         headers: {
           Authorization: `Bearer ${cookies.token}`,
@@ -114,7 +114,7 @@ const log_out = ()=>{
                 <div className="sidebar__container">
                     <div className="sidebar__user">
                         <div className="sidebar__img">
-                            <img src={user.profilImage ? `http://${user.profilImage}` : user_img } alt="image" />
+                            <img src={user.profilImage ? `https://${user.profilImage}` : user_img } alt="image" />
                         </div>
                         <div className="sidebar__info">
                             <h3>{user.name ? user.name : ""}</h3>
@@ -123,7 +123,6 @@ const log_out = ()=>{
                     </div>
 
                     <div className="sidebar__content">
-                        <h3 className="sidebar__title">: ادارة الموقع</h3>
                         <div className="sidebar__list">
                             <NavLink to="get_company" className="sidebar__link">
                                 <FontAwesomeIcon icon={faShop} />

@@ -21,7 +21,7 @@ export default function Get_Categorey() {
   const Navigate = useNavigate()
 
   useEffect(() => {
-    Axios.get(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_Categorey`)
+    Axios.get(`https://b2you.net/api/v2/company/get_Categorey`)
       .then(res => {
         setCategorey(res.data.data);
         setresult(res.data.result);
@@ -34,7 +34,7 @@ export default function Get_Categorey() {
 
   const deleteCategory = () => {
     setloading(true)
-    Axios.delete(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/delete_Categorey/${idToDelete}`,{
+    Axios.delete(`https://b2you.net/api/v2/company/delete_Categorey/${idToDelete}`,{
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -72,7 +72,7 @@ export default function Get_Categorey() {
         {Categorey.map((cat) => (
           <div className='Categorey' key={cat._id}>
             <div className='img_cat'>
-              <img src={`http://${cat.Categoreyimage}`} alt={cat.name} />
+              <img src={`https://${cat.Categoreyimage}`} alt={cat.name} />
             </div>
             <h2>{cat.name}</h2>
             <p>{cat.description}</p>

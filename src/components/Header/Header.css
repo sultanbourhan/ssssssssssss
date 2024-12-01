@@ -47,6 +47,7 @@ header h1{
     color: var(--title-color );
     font-size: 45px;
     font-weight: 900;
+    cursor: pointer;
 }
 header h1 > span{
     -webkit-text-stroke: 2px var(--first-color);

@@ -27,7 +27,7 @@ export default function ResetPassword() {
 
   const code = () => {
     Axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/resetPassword`,
+      `https://b2you.net/api/v2/auth/resetPassword`,
       {
         newPassword,
         passwordConfirm,

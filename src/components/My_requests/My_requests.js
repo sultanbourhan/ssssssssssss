@@ -34,7 +34,7 @@ export default function My_reqeusts() {
 
   useEffect(() => {
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_Company_requests_my`,
+      `https://b2you.net/api/v2/company/get_Company_requests_my`,
       {
         headers: {
           Authorization: `Bearer ${cookies.token}`,
@@ -128,7 +128,7 @@ export default function My_reqeusts() {
               <img
                 src={
                   company && company.companyImage
-                    ? `http://${company.companyImage}`
+                    ? `https://${company.companyImage}`
                     : "defaultImage.jpg"
                 }
                 alt=""
@@ -137,7 +137,7 @@ export default function My_reqeusts() {
                 className="img_lo"
                 src={
                   company && company.logoImage
-                    ? `http://${company.logoImage}`
+                    ? `https://${company.logoImage}`
                     : "defaultLogo.jpg"
                 }
                 alt="Company Logo"

@@ -103,7 +103,6 @@ button {
   left: 0;
   right: 0;
   z-index: var(--z-fixed);
-  margin: .75rem;
   border-radius: none;
 }
 
@@ -270,8 +269,13 @@ button {
   color: var(--first-color);
 }
 
+.sidebar__list  .sidebar__link svg{
+  font-size: 25px;
+}
+
 .sidebar__actions {
   margin-top: auto;
+  margin-top: 15px;
 }
 
 .sidebar__actions button {
@@ -319,7 +323,7 @@ button {
   }
   .sidebar__info, 
   .sidebar__link span {
-    display: none;
+    /* display: none; */
   }
   .sidebar__user, 
   .sidebar__list, 
@@ -328,7 +332,7 @@ button {
   }
   .sidebar__user, 
   .sidebar__link {
-    grid-template-columns: max-content;
+    /* grid-template-columns: max-content; */
   }
   .sidebar__user {
     padding: 0;
@@ -460,8 +464,5 @@ form{
 
 
 /* --------------------------------------------------*/
-
-
-
 
 

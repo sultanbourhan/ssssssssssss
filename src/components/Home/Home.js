@@ -31,10 +31,11 @@ export default function Home() {
 
   useEffect(() => {
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_Categorey`
+      `https://b2you.net/api/v2/company/get_Categorey`
     )
       .then((res) => {
         setCategory(res.data.data);
+        console.log(res.data.data);
         setloading(false);
       })
       .catch((error) => {
@@ -61,7 +62,7 @@ export default function Home() {
   const [company, setcompany] = useState([]);
 
   useEffect(() => {
-    Axios.get(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company`)
+    Axios.get(`https://b2you.net/api/v2/company`)
       .then((res) => {
         setcompany(res.data.data);
         console.log(res.data.data);
@@ -198,13 +199,13 @@ export default function Home() {
         <div className="container">
           <h1>جميع الفئات</h1>
           <div className="cats">
-            {category.map((cat) => (
+            {category? category.map((cat) => (
               <div className="cat" key={cat.id}>
                 <img className="img_cacts" src={img_cat} />
                 <div className="contantcat">
                   <img
                     className="img2"
-                    src={`http://${cat.Categoreyimage}`}
+                    src={`https://${cat.Categoreyimage}`}
                     alt=""
                   />
                   <div className="namecat">
@@ -216,7 +217,7 @@ export default function Home() {
                   زيارة الفئة
                 </button>
               </div>
-            ))}
+            )):null}
           </div>
         </div>
       </div>
@@ -228,7 +229,7 @@ export default function Home() {
               ? company.map((com) => {
                   return (
                     <div className="logos-slide">
-                      <img src={`http://${com.logoImage}`} alt="Logo 1" />
+                      <img src={`https://${com.logoImage}`} alt="Logo 1" />
                     </div>
                   );
                 })

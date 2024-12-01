@@ -279,17 +279,7 @@ flex-direction: column;
     width: calc(50% - 10px);
   }
 
-  @media(max-width:767px){
-    .companys .header_comp .select{
-      width: 100%;
-      gap: 6px;
-    }
 
-    .companys .header_comp .select .coolinput{
-      width: calc(50% - 3px);
-    }
-
-  }
   .companys .header_comp .input .coolinput{
     position: relative;
     width: 300px;
@@ -330,4 +320,27 @@ flex-direction: column;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     box-shadow: 2px 5px 0 0 black;
+  }
+
+  
+  @media(max-width:767px){
+    .companys .header_comp .select{
+      width: 100%;
+      gap: 6px;
+    }
+
+    .companys .header_comp .select .coolinput{
+      width: calc(50% - 3px);
+    }
+    .companys .header_comp .input .coolinput{
+      width: 100%;
+    }
+
+    .companys {
+      background: var(--sec-color);
+      margin-left: auto;
+      margin-right: auto;
+      min-height: 100vh;
+      padding: 70px 10px 30px;
+  }
   }

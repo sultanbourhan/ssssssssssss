@@ -195,7 +195,7 @@
 
 .advertisement{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     padding:20px 0;
     padding: 20px 0;
@@ -311,6 +311,18 @@ color: var(--text-color);
 }
 
 
-
+@media (max-width: 767px){
+    .Get_company .Get_company_cart .icon_company {
+        bottom: 20px;
+        cursor: pointer;
+        display: flex;
+        font-size: 20px;
+        gap: 10px;
+        position: static;
+        right: 20px;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
 
 

@@ -51,7 +51,7 @@ export default function Signin() {
   const login = async (e) => {
     e.preventDefault();
     await Axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/login`,
+      `https://b2you.net/api/v2/auth/login`,
       {
         email: emailup,
         password: passwordup,
@@ -120,7 +120,7 @@ export default function Signin() {
   const Signup = async (e) => {
     e.preventDefault();
     await Axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/sign_up`,
+      `https://b2you.net/api/v2/auth/sign_up`,
       {
         name: namein,
         email: emailin,

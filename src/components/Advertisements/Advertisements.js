@@ -107,7 +107,7 @@ export default function Advertisements() {
   useEffect(() => {
     // setLoading(true);
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_all_company_advertisements?categorey=${category_id}`
+      `https://b2you.net/api/v2/company/get_all_company_advertisements?categorey=${category_id}`
     )
       .then((res) => {
         setadvertisement(res.data.data);
@@ -125,7 +125,7 @@ export default function Advertisements() {
 
   const likes = (id) => {
     Axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/likes_company_advertisements/${id}`,
+      `https://b2you.net/api/v2/company/likes_company_advertisements/${id}`,
       {},
       {
         headers: {
@@ -199,7 +199,7 @@ export default function Advertisements() {
 
     // إرسال الطلب
     Axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/create_company_advertisements_my`,
+      `https://b2you.net/api/v2/company/create_company_advertisements_my`,
       formData,
       {
         headers: {
@@ -250,7 +250,7 @@ export default function Advertisements() {
 
   useEffect(() => {
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_Categorey`
+      `https://b2you.net/api/v2/company/get_Categorey`
     )
       .then((res) => {
         setCategory(res.data.data);
@@ -266,7 +266,7 @@ export default function Advertisements() {
 
   useEffect(() => {
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_company_my`,
+      `https://b2you.net/api/v2/company/get_company_my`,
       {
         headers: {
           Authorization: `Bearer ${cookies.token}`,
@@ -305,14 +305,14 @@ export default function Advertisements() {
             <div className="exit">
               <h1>إنشاء إعلان</h1>
               <FontAwesomeIcon
-                style={{ color: "black", fontSize: "30px", cursor: "pointer" }}
+                style={{ fontSize: "30px", cursor: "pointer" }}
                 onClick={toggleAdForm}
                 icon={faTimes}
               />
             </div>
             <div className="imgcomapny">
               <img
-                src={mycmpany ? `http://${mycmpany.logoImage}` : ""}
+                src={mycmpany ? `https://${mycmpany.logoImage}` : ""}
                 alt="Company"
               />
               <p>{mycmpany ? mycmpany.name : null}</p>
@@ -451,7 +451,7 @@ export default function Advertisements() {
           </div>
           <div className="advertisement">
             <button style={cookies.token && mycmpany ? {display: "flex"} : {display: "none"}} id="show" className="button" onClick={toggleAdForm}>
-              <img src={mycmpany ? `http://${mycmpany.logoImage}` : ""} />
+              <img src={mycmpany ? `https://${mycmpany.logoImage}` : ""} />
               <p>أنشئ إعلانًا! فرصة رائعة لنشر إعلانك على موقعنا.</p>
             </button>
 
@@ -464,7 +464,7 @@ export default function Advertisements() {
                     <div style={{padding:"0"}} className="company" onClick={() => Navigate(`/company_id/${adv.Company._id}`)}>
                       <img
                         src={
-                          adv.Company ? `http://${adv.Company.logoImage}` : ""
+                          adv.Company ? `https://${adv.Company.logoImage}` : ""
                         }
                         alt="Company"
                       />
@@ -486,7 +486,7 @@ export default function Advertisements() {
                         {adv.Image
                           ? adv.Image.map((img) => {
                               return (
-                                <img key={img} src={`http://${img}`} alt="Ad" />
+                                <img key={img} src={`https://${img}`} alt="Ad" />
                               );
                             })
                           : null}

@@ -317,7 +317,7 @@ body {
 
 @media (max-width: 767px) {
   .wrapper {
-    padding-top: 3%;
+    padding-top: 70px;
   }
   .user-card:before {
     width: 300%;

@@ -73,7 +73,7 @@ export default function About() {
 
   const resetEmail = () => {
     Axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/receiveAndSendEmailMe`,
+      `https://b2you.net/api/v2/auth/receiveAndSendEmailMe`,
       {
         email,
         subject,

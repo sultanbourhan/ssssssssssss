@@ -44,7 +44,7 @@ export default function Profile() {
       formData.append("profilImage", profileImage);
 
       Axios.put(
-        `http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/update_date_user_my`,
+        `https://b2you.net/api/v2/auth/update_date_user_my`,
         formData,
         {
           headers: {
@@ -84,7 +84,7 @@ export default function Profile() {
       };
 
       Axios.put(
-        `http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/update_date_user_my`,
+        `https://b2you.net/api/v2/auth/update_date_user_my`,
         data,
         {
           headers: {
@@ -122,7 +122,7 @@ export default function Profile() {
 
   useEffect(() => {
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/get_date_my`,
+      `https://b2you.net/api/v2/auth/get_date_my`,
       {
         headers: {
           Authorization: `Bearer ${cookies.token}`,
@@ -197,7 +197,7 @@ export default function Profile() {
             </div>
             <div className="form-group">
               <label htmlFor="profileImage">صورة الملف الشخصي</label>
-              <img src={user.profilImage ? `http://${user.profilImage}` : ""} />
+              <img src={user.profilImage ? `https://${user.profilImage}` : ""} />
               <div className="image-upload-box">
                 <input
                   type="file"
@@ -220,7 +220,7 @@ export default function Profile() {
         </div>
         <div className="user-card">
           <div className="user-card-img">
-          <img src={user.profilImage ? `http://${user.profilImage}` : user_img} />
+          <img src={user.profilImage ? `https://${user.profilImage}` : user_img} />
           </div>
           <div className="user-card-info">
             <h2>{user.name}</h2>

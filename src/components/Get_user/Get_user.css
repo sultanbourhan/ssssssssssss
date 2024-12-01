@@ -65,3 +65,13 @@
 .Get_user .all_user .user1 p svg:hover{
     color: #F44336;
 }
+
+@media (max-width: 767px){
+    .Get_user .h2_s {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+}

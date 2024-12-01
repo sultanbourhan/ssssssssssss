@@ -33,7 +33,7 @@ export default function Create_user() {
 
 
   const handleSubmit = ()=>{
-    Axios.post(`http://${process.env.REACT_APP_BASE_URL}/api/v2/user`,{
+    Axios.post(`https://b2you.net/api/v2/user`,{
       name ,
       email ,
       password,

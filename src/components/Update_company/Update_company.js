@@ -39,7 +39,7 @@ export default function Update_company() {
   const [cookies] = useCookies(['token']);
 
   useEffect(() => {
-    Axios.get(`http://${process.env.REACT_APP_BASE_URL}/api/v2/user`, {
+    Axios.get(`https://b2you.net/api/v2/user`, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -55,7 +55,7 @@ export default function Update_company() {
   const [Categorey, setCategorey] = useState([]);
 
   useEffect(() => {
-    Axios.get(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_Categorey`)
+    Axios.get(`https://b2you.net/api/v2/company/get_Categorey`)
       .then(res => {
         setCategorey(res.data.data);
       })
@@ -119,7 +119,7 @@ export default function Update_company() {
    const [bag_img_com , setbag_img_com] = useState()
 
   useEffect(() => {
-    Axios.get(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_company_id/${id}`)
+    Axios.get(`https://b2you.net/api/v2/company/get_company_id/${id}`)
       .then(res => {
         console.log(res.data.data);
         setname_c(res.data.data.name)
@@ -168,7 +168,7 @@ export default function Update_company() {
       // طباعة jsonData للتأكد من القيم
       console.log('Sending JSON:', jsonData);
   
-      Axios.put(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/update_company_id/${id}`, jsonData, {
+      Axios.put(`https://b2you.net/api/v2/company/update_company_id/${id}`, jsonData, {
         headers: {
           Authorization: `Bearer ${cookies.token}`,
           'Content-Type': 'application/json', // تأكد من تحديد Content-Type
@@ -207,7 +207,7 @@ export default function Update_company() {
         console.log(pair[0] + ': ' + pair[1]);
       }
   
-      Axios.put(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/update_company_id/${id}`, formData, {
+      Axios.put(`https://b2you.net/api/v2/company/update_company_id/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${cookies.token}`
           // لا تحتاج إلى 'Content-Type': 'multipart/form-data' هنا
@@ -294,7 +294,7 @@ export default function Update_company() {
 
   return (
     <div className='update_company'>
-      <h2>Create company</h2>
+      <h2>تعديل الشركة</h2>
 
       <p>{api_err}</p>
 
@@ -317,7 +317,7 @@ export default function Update_company() {
               <div className='img_upd_1'>
                 <p>{companyImage_err}</p>
                 <label htmlFor="companyImage" className="text">صورة الشركة:</label>
-                <img src={`http://${bag_img_com}`}/>
+                <img src={`https://${bag_img_com}`}/>
                 <div className='img_upd' onClick={() => inputFileRef1.current.click()} style={{ backgroundImage: `url(${companyImage ? URL.createObjectURL(companyImage) : ''})` }}>
                   {!companyImage && <span>+</span>}
                   <input type="file" ref={inputFileRef1} style={{ display: 'none' }} onChange={handleCompanyImageChange} />
@@ -327,7 +327,7 @@ export default function Update_company() {
               <div className='img_upd_1'>
                 <p>{logoImage_err}</p>
                 <label htmlFor="logoImage" className="text">شعار الشركة:</label>
-                <img src={`http://${bag_img_logo}`}/>
+                <img src={`https://${bag_img_logo}`}/>
                 <div className='img_upd' onClick={() => inputFileRef2.current.click()} style={{ backgroundImage: `url(${logoImage ? URL.createObjectURL(logoImage) : ''})` }}>
                   {!logoImage && <span>+</span>}
                   <input type="file" ref={inputFileRef2} style={{ display: 'none' }} onChange={handleLogoImageChange} />

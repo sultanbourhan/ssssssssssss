@@ -26,7 +26,7 @@ export default function VerifyResetPassword() {
     console.log("Verification code sent:", verify); // طباعة الرمز للتأكد من صحته
 
     Axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/verifyResetPassword`,
+      `https://b2you.net/api/v2/auth/verifyResetPassword`,
       {
         verificationCode: verify,
         email,

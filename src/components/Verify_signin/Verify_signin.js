@@ -29,7 +29,7 @@ export default function Verify_signin() {
 
     const code = JSON.parse(window.localStorage.getItem("code"));
 
-    Axios.post(`http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/verify`, {
+    Axios.post(`https://b2you.net/api/v2/auth/verify`, {
       verificationCode: verify,
       tempUser: code,
     })

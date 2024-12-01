@@ -42,13 +42,13 @@ export default function Company_id() {
       // setLoading(true);
       try {
         const companyResponse = await Axios.get(
-          `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_company_id/${id}`
+          `https://b2you.net/api/v2/company/get_company_id/${id}`
         );
         setCompany(companyResponse.data.data);
         // console.log(companyResponse.data.data);
 
         const adsResponse = await Axios.get(
-          `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_all_company_advertisements_id/${id}`
+          `https://b2you.net/api/v2/company/get_all_company_advertisements_id/${id}`
         );
         setAdvertisements(adsResponse.data.data);
       } catch (error) {
@@ -70,7 +70,7 @@ export default function Company_id() {
   const create_comment = (id) => {
     setLoading_com(false)
     Axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/create_company_comments/${id}`,
+      `https://b2you.net/api/v2/company/create_company_comments/${id}`,
       {
         comment: comments,
       },
@@ -112,7 +112,7 @@ export default function Company_id() {
   const  rat = (num , id)=>{
     
     Axios.post(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/create_company_Reviews/${id}`,
+      `https://b2you.net/api/v2/company/create_company_Reviews/${id}`,
       {
         rating: num,
       },
@@ -137,7 +137,7 @@ export default function Company_id() {
 
   useEffect(() => {
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/auth/get_date_my`,
+      `https://b2you.net/api/v2/auth/get_date_my`,
       {
         headers: {
           Authorization: `Bearer ${cookies.token}`,
@@ -210,7 +210,7 @@ export default function Company_id() {
             <img
               src={
                 company && company.companyImage
-                  ? `http://${company.companyImage}`
+                  ? `https://${company.companyImage}`
                   : "defaultImage.jpg"
               }
               alt="Company Image"
@@ -219,7 +219,7 @@ export default function Company_id() {
               className="img_lo"
               src={
                 company && company.logoImage
-                  ? `http://${company.logoImage}`
+                  ? `https://${company.logoImage}`
                   : "defaultLogo.jpg"
               }
               alt="Company Logo"
@@ -242,7 +242,7 @@ export default function Company_id() {
                       <img
                         src={
                           comm.user_comment && comm.user_comment.profilImage 
-                            ? `http://${comm.user_comment.profilImage}`
+                            ? `https://${comm.user_comment.profilImage}`
                             : user_img
                         }
                       />
@@ -264,7 +264,7 @@ export default function Company_id() {
             <input value="5" name="rating" type="radio" id="rating-5" />
               <label  title="5 star" htmlFor="rating-5">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   height="1em"
                   viewBox="0 0 576 512"
                   onClick={()=>rat(5 , company._id)}
@@ -278,7 +278,7 @@ export default function Company_id() {
             <input value="4" name="rating" type="radio" id="rating-4" />
               <label  title="4 stars" htmlFor="rating-4">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   height="1em"
                   viewBox="0 0 576 512"
                   onClick={()=>rat(4 , company._id)}
@@ -290,7 +290,7 @@ export default function Company_id() {
             <input value="3" name="rating" type="radio" id="rating-3" />
               <label  title="3 stars" htmlFor="rating-3">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   height="1em"
                   viewBox="0 0 576 512"
                   onClick={()=>rat(3 , company._id)}
@@ -303,7 +303,7 @@ export default function Company_id() {
             <input value="2" name="rating" type="radio" id="rating-2" />
               <label  title="2 stars" htmlFor="rating-2">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   height="1em"
                   viewBox="0 0 576 512"
                   onClick={()=>rat(2 , company._id)}
@@ -315,7 +315,7 @@ export default function Company_id() {
               <input value="1" name="rating" type="radio" id="rating-1" />
               <label  title="1 stars" htmlFor="rating-1">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   height="1em"
                   viewBox="0 0 576 512"
                   onClick={()=>rat(1 , company._id)}
@@ -333,7 +333,7 @@ export default function Company_id() {
               
             </div>
             <div className="create_comment">
-              <img src={user.profilImage ? `http://${user.profilImage}` : user_img} />
+              <img src={user.profilImage ? `https://${user.profilImage}` : user_img} />
               <input
                 type="text"
                 placeholder="اكتب تعليق"
@@ -362,7 +362,7 @@ export default function Company_id() {
               <div className="company_add">
                 <img
                   src={
-                    company ? `http://${company.logoImage}` : "defaultLogo.jpg"
+                    company ? `https://${company.logoImage}` : "defaultLogo.jpg"
                   }
                   alt="Company Logo"
                 />
@@ -381,7 +381,7 @@ export default function Company_id() {
                     adv.Image.map((img, index) => (
                       <img
                         key={index}
-                        src={`http://${img}`}
+                        src={`https://${img}`}
                         alt="Advertisement"
                       />
                     ))

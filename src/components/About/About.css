@@ -4,7 +4,7 @@
 }
 
 .book {
-  height: calc(100vh - 70px);
+  height: 870px;
   display: flex;
   align-items: center;
   justify-content: center;

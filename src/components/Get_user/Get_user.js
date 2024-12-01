@@ -29,7 +29,7 @@ export default function Get_user() {
 
 
   useEffect(() => {
-    Axios.get(`http://${process.env.REACT_APP_BASE_URL}/api/v2/user?name=${user_searsh}&limit=${limit}`, {
+    Axios.get(`https://b2you.net/api/v2/user?name=${user_searsh}&limit=${limit}`, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -50,7 +50,7 @@ export default function Get_user() {
 
   const deleteUser = () => {
     setloading(true)
-    Axios.delete(`http://${process.env.REACT_APP_BASE_URL}/api/v2/user/${idToDelete}`, {
+    Axios.delete(`https://b2you.net/api/v2/user/${idToDelete}`, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -94,7 +94,7 @@ export default function Get_user() {
       <div className='all_user'>
         {user.map((u) => (
           <div className='user1' key={u._id}>
-            <div><img src={u.profilImage?  `http://${u.profilImage}` : user_img} alt="User" /></div>
+            <div><img src={u.profilImage?  `https://${u.profilImage}` : user_img} alt="User" /></div>
             <p>{u.name}</p>
             <p>{u.email}</p>
             <p>{u.phone}</p>

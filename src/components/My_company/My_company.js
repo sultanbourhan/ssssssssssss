@@ -41,7 +41,7 @@ export default function My_company() {
 
   useEffect(() => {
     Axios.get(
-      `http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_company_my`,
+      `https://b2you.net/api/v2/company/get_company_my`,
       {
         headers: {
           Authorization: `Bearer ${cookies.token}`,
@@ -52,7 +52,7 @@ export default function My_company() {
         setCompany(res.data.data);
         console.log(res.data.data);
         Axios.get(
-          `http://${
+          `https://${
             process.env.REACT_APP_BASE_URL
           }/api/v2/company/get_company_advertisements_my/${
             res.data.data ? res.data.data._id : null
@@ -89,7 +89,7 @@ export default function My_company() {
   
   const delete_advertisement = () => {
     setloading(true)
-    Axios.delete(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/delete_company_advertisements_my/${id_advertisement}`, {
+    Axios.delete(`https://b2you.net/api/v2/company/delete_company_advertisements_my/${id_advertisement}`, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -210,7 +210,7 @@ export default function My_company() {
               <img
                 src={
                   company && company.companyImage
-                    ? `http://${company.companyImage}`
+                    ? `https://${company.companyImage}`
                     : "defaultImage.jpg"
                 }
                 alt=""
@@ -219,7 +219,7 @@ export default function My_company() {
                 className="img_lo"
                 src={
                   company && company.logoImage
-                    ? `http://${company.logoImage}`
+                    ? `https://${company.logoImage}`
                     : "defaultLogo.jpg"
                 }
                 alt="Company Logo"
@@ -242,7 +242,7 @@ export default function My_company() {
                           <img
                             src={
                               comm.user_comment && comm.user_comment.profilImage
-                                ? `http://${comm.user_comment.profilImage}`
+                                ? `https://${comm.user_comment.profilImage}`
                                 :user_img
                             }
                           />
@@ -270,7 +270,7 @@ export default function My_company() {
                       <div class="company_add">
                         <img
                           src={
-                            adv.Company ? `http://${adv.Company.logoImage}` : ""
+                            adv.Company ? `https://${adv.Company.logoImage}` : ""
                           }
                           alt=""
                         />
@@ -290,7 +290,7 @@ export default function My_company() {
                                 return (
                                   <img
                                     key={index}
-                                    src={`http://${img}`}
+                                    src={`https://${img}`}
                                     alt="Advertisement"
                                   />
                                 );

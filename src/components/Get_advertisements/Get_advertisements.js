@@ -18,7 +18,7 @@ export default function Get_advertisements() {
   const [result, setresult] = useState([]);
 
   useEffect(() => {
-    Axios.get(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/get_all_company_advertisements`, {
+    Axios.get(`https://b2you.net/api/v2/company/get_all_company_advertisements`, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -36,7 +36,7 @@ export default function Get_advertisements() {
 
   const delete_advertisement = () => {
     setLoading(true)
-    Axios.delete(`http://${process.env.REACT_APP_BASE_URL}/api/v2/company/delete_company_advertisements_admin/${id_advertisement}`, {
+    Axios.delete(`https://b2you.net/api/v2/company/delete_company_advertisements_admin/${id_advertisement}`, {
       headers: {
         Authorization: `Bearer ${cookies.token}`,
       },
@@ -85,7 +85,7 @@ export default function Get_advertisements() {
         {advertisement.map((com) => (
           <div class="adver">
             <div class="company" style={{padding:"0"}}>
-              <img src={`http://${com.Company ? com.Company.companyImage : null}`} alt="" />
+              <img src={`https://${com.Company ? com.Company.companyImage : null}`} alt="" />
               <div class="name">
                 <h1>{com.Company ? com.Company.name : null}</h1>
                 <span>{com.createdAt ? format(new Date(com.createdAt), 'dd/MM/yyyy') : null}</span>
@@ -102,7 +102,7 @@ export default function Get_advertisements() {
                 {
                   com.Image ? com.Image.map((img)=>{
                     return(
-                      <img src={`http://${img}`} alt="" />
+                      <img src={`https://${img}`} alt="" />
                     )
                   }): null
                 }
